@@ -3,14 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TelaLoginComponent } from './tela-login/tela-login.component';
+import { TelaLoginModule } from './tela-login/tela-login.module';
+import { TelaHomeComponent } from './tela-home/tela-home.component';
+import { TelaHomeModule } from './tela-home/tela-home.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TelaLoginComponent,
+    TelaHomeComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TelaLoginModule,
+    TelaHomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
