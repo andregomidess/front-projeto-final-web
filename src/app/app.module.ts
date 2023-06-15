@@ -3,15 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TelaLoginComponent } from './tela-login/tela-login.component';
-import { TelaLoginModule } from './tela-login/tela-login.module';
-import { TelaHomeComponent } from './tela-home/tela-home.component';
-import { TelaHomeModule } from './tela-home/tela-home.module';
+
+import { TelaHomeComponent } from './pages/tela-home/tela-home.component';
+import { TelaHomeModule } from './pages/tela-home/tela-home.module';
+import { TelaLoginComponent } from './pages/tela-login/tela-login.component';
+import { TelaLoginModule } from './pages/tela-login/tela-login.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TelaLoginComponent,
+   TelaLoginComponent,
     TelaHomeComponent,
   ],
   imports: [
