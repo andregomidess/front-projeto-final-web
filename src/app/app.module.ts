@@ -9,6 +9,7 @@ import { TelaHomeModule } from './pages/tela-home/tela-home.module';
 import { TelaLoginComponent } from './pages/tela-login/tela-login.component';
 import { TelaLoginModule } from './pages/tela-login/tela-login.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,

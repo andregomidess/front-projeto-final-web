@@ -3,7 +3,54 @@
   width: 17rem;
   background-color: #eeeeee;
   border-radius: .5rem;
-  margin-left: 1rem;
-  margin-top: 1rem;
+  margin-left: 1.5rem;
+  margin-top: 1.5rem;
   box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.158);
+  overflow: hidden;
+
+  position: relative;
+
+  #tres-pontinhos{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .5rem;
+    cursor: pointer;
+  }
+
+  .rating{
+    i{
+      font-size: clamp(0.5rem, 0.8rem, 0.9rem);
+      margin-left: .3rem;
+    }
+  }
+
+  #capa-livro{
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    &:hover{
+      transform: scale(1.2);
+    }
+    img{
+      height: 9rem;
+      border-radius: 3px;
+    }
+  }
+  .info-livro{
+    cursor: pointer;
+    h2{
+      text-align: center;
+      font-size: clamp(0.8rem, 1.2rem, 1.4rem);
+      color: #494949;
+    }
+
+
+    p{
+      text-align: center;
+      font-size: clamp(0.4rem, 0.8rem, 0.8rem);
+      color: #6d6d6d;
+    }
+  }
+
+
 }
