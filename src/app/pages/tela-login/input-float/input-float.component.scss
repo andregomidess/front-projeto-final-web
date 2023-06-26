@@ -1,59 +1,58 @@
-.container{
-  height: 5rem;
-  .area-input{
-    position: relative;
-    height: inherit ;
-    input{
-      position: absolute;
-      background: rgba(34, 40, 48, 0.7);
-      border-radius: 10px;
-      height: 70%;
-      padding: 0 10px;
-      color: black;
-      border: none;
-      transition: 0.1s ease;
-      z-index: 1111;
+.container {
+  height: 12vh;
+}
 
+.container .area-input {
+  position: relative;
+  height: 100%;
+}
 
-      &:focus{
-        border: #06b8e0 solid 2px;
-        outline: none;
-        background: transparent;
+.container .area-input input {
+  position: absolute;
+  background: rgba(34, 40, 48, 0.7);
+  border-radius: 10px;
+  height: 60%;
+  padding: 0 10px;
+  color: black;
+  border: none;
+  transition: 0.1s ease;
+  z-index: 1111;
 
-      }
+  &:focus {
+    border: #06b8e0 solid 2px;
+    outline: none;
+    background: transparent;
+  }
 
-      &::after{
-        color: white;
-      }
+  &::after {
+    color: white;
+  }
 
-      &:hover {
-        border: #06b8e0 solid 2px;
-      }
-      &:hover + .labelline{
-        //border: #65DDF9 solid 2px;
-        color: #06b8e0;
-      }
-    }
-    .labelline{
-      display: inline;
-      position: absolute;
-      top: 20%;
-      left: 3%;
-      color: white;
-      transition: 0.2s ease;
-      z-index: 1111;
-      padding: 2px 8px 2px 8px;
-      font-weight: 400;
+  &:hover {
+    border: #06b8e0 solid 2px;
+  }
 
-    }
+  &:hover + .labelline {
+    color: #06b8e0;
   }
 }
 
-input:focus + .labelline,
-input:valid + .labelline {
+.container .area-input .labelline {
+  display: inline;
+  position: absolute;
+  top: 15%;
+  left: 2%;
+  color: white;
+  transition: 0.2s ease;
+  z-index: 1111;
+  padding: 2px 8px;
+}
+
+.container input:focus + .labelline,
+.container input:valid + .labelline {
   transform: translate(0px, -25px) scale(0.88);
   color: white !important;
   font-weight: bold;
   background-color: #06b8e0;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
 }
