@@ -1,0 +1,67 @@
+.capa {
+    background-color:#587184;
+    color: aliceblue;
+}
+.direita {
+    display: flex;
+}
+.botao {
+    background-color: #587184;
+    color: aliceblue;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 20px;
+    border: 0px;
+}
+.botao:hover {
+    color: #55A8FC;
+    transition: background-color 0.25s;
+}
+.descricao {
+    background-color: #F6F7FB;
+}
+h2 {
+    color: #55A8FC;
+    margin-left: 20px;
+    text-decoration: underline;
+}
+h3 {
+    color: #55A8FC;
+}
+div {
+    padding: 18px;
+}
+img {
+    width: 20%;
+    border: 2px solid;
+    border-color: slategray;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.borda{
+    border: 2px solid;
+    border-color: slategray;
+}
+.margin-right{
+    margin-right: 5px;
+    font-weight: bold;
+}
+.estrela{
+    color: #fdc555;
+}
+.full {
+    width: 100%;
+}
+.right {
+    margin-left: 80px;
+    margin-right: 80px;
+    width: 30%;
+}
+.quebra-linha{
+    word-wrap: break-word;
+}
+.espaco{
+    margin-top: 120px;
+    margin-bottom: 20px;
+}
