@@ -1,0 +1,39 @@
+.perfil-container{
+    background: linear-gradient(white, white) padding-box,
+    linear-gradient(45deg, #65DDF9, #03A2EB, #0281BB) border-box;
+    border-bottom: 2px solid transparent;
+    .perfil-content{
+      width: 100%;
+  
+      .foto{
+        height: 5rem;
+        width: 5rem;
+        background-image: url('../../../../assets/images/home/side-bar/foto_perfil.jpeg');
+        background-position: center;
+        background-size: cover;
+        border: 2px solid #52FF61;
+        margin-right: 1em;
+      }
+      .nome-cargo{
+        color: black;
+        p{
+          margin: 0;
+          text-align: left;
+        }
+        .nome{
+          font-size: 16px;
+          line-height: 120%;
+        }
+          .cargo{
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 120%;
+            margin-top: 2px;
+          }
+      }
+    }
+  }
+  .w-90{
+    width: 90%;
+  }
+  

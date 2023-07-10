@@ -1,0 +1,44 @@
+form{
+    position: relative;
+    background: linear-gradient(white, white) padding-box,
+    linear-gradient(268.16deg, #65DDF9, #03A2EB, #0281BB) border-box;
+    border-top: 3px solid transparent;
+  
+    .btn{
+      position: absolute;
+      right:0;
+    }
+  }
+  
+h1{
+    font-weight: 500;
+    font-size: 1.5em;
+    line-height: 120%;
+    color: #505050;
+}
+
+.btn-anexar{
+  background-color: white;
+  color: #0281BB;
+  padding: 2%;
+  border-radius: 8px;
+  fill: #0281BB;
+  &:hover{
+    background-color: #0281BB;
+    color: white;
+    fill: white;
+  }
+  p{
+    font-weight: 600;
+    font-size: clamp(0.6rem, 1rem, 1.3rem);
+    line-height: 120%;
+  }
+  div{
+    border-left: 1px solid  #CCCCCC;
+    color: #CCCCCC;
+    p{
+      font-weight: 300;
+      margin-left: 5px;
+    }
+  }
+}

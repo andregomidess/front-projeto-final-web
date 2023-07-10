@@ -11,7 +11,5 @@ export class FormLoginComponent {
   @Output() login: EventEmitter<void> = new EventEmitter<void>();
   constructor(private router: Router) {}
 
-  realizarLogin(){
-    this.router.navigate(['home']);
-  }
+
 }
