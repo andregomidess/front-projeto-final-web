@@ -1,0 +1,58 @@
+.container {
+    height: 10vh;
+  }
+  
+  .container .area-input {
+    position: relative;
+    height: 100%;
+  }
+  
+  .container .area-input input {
+    position: absolute;
+    background: rgba(34, 40, 48, 0.7);
+    border-radius: 10px;
+    height: 60%;
+    padding: 0 10px;
+    color: black;
+    border: none;
+    transition: 0.1s ease;
+    z-index: 1111;
+  
+    &:focus {
+      border: #06b8e0 solid 2px;
+      outline: none;
+      background: transparent;
+    }
+  
+    &::after {
+      color: white;
+    }
+  
+    &:hover {
+      border: #06b8e0 solid 2px;
+    }
+  
+    &:hover + .labelline {
+      color: #06b8e0;
+    }
+  }
+  
+  .container .area-input .labelline {
+    display: inline;
+    position: absolute;
+    top: 8%;
+    left: 2%;
+    color: white;
+    transition: 0.2s ease;
+    z-index: 1111;
+    padding: 0px 8px;
+  }
+  
+  .container input:focus + .labelline,
+  .container input:valid + .labelline {
+    transform: translate(0px, -25px) scale(0.88);
+    color: white !important;
+    font-weight: bold;
+    background-color: #06b8e0;
+    border-radius: 0.3rem;
+  }

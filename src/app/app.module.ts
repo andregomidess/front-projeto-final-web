@@ -11,6 +11,8 @@ import { TelaLoginModule } from './pages/tela-login/tela-login.module';
 import { RouterModule } from '@angular/router';
 import { InfoLivrosComponent } from './pages/info-livros/info-livros.component';
 import { ComponentsModule } from './components/components.module';
+import { TelaCadastroComponent } from './pages/tela-cadastro/tela-cadastro.component';
+import { TelaCadastroModule } from './pages/tela-cadastro/tela-cadastro.module';
 
 
 
@@ -20,6 +22,7 @@ import { ComponentsModule } from './components/components.module';
     TelaLoginComponent,
     TelaHomeComponent,
     InfoLivrosComponent,
+    TelaCadastroComponent,
 
   ],
   imports: [
@@ -29,6 +32,7 @@ import { ComponentsModule } from './components/components.module';
     TelaHomeModule,
     RouterModule,
     ComponentsModule,
+    TelaCadastroModule,
     
   ],
   providers: [],
