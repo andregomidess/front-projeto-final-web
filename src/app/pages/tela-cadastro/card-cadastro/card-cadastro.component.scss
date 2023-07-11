@@ -1,0 +1,55 @@
+.card-cadastro{
+    height:95%;
+    width: 35%;
+    background: radial-gradient(100% 359.18% at 0% 0%, rgba(255, 255, 255, 0.363) 0%, rgba(255, 255, 255, 0.03) 100%);
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.158);
+    backdrop-filter: blur(15px);
+    border-radius: 2rem;
+  }
+  
+  .titulo {
+    color: white;
+    border: 2px solid white;
+    background-color: rgba($color: #08a1de, $alpha: 0.3);
+    border-radius: 5px;
+    font-size: 2.5vw;
+    white-space: nowrap;
+  }
+  
+  figure {
+    display: flex;
+    align-items: center;
+  }
+  
+  .book {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+
+  .top{
+    font-weight: 1000;
+    line-height: 30px;
+    color: #fff;
+    margin-block-start: 0!important;
+    background: linear-gradient(#b9dced, #8cdbff) padding-box,
+    linear-gradient(268.16deg, #003cff, #eb03c8, #24bb02) border-box;
+    border-bottom: 3px solid transparent;
+  }
+  
+  @media (max-width: 640px) {
+    .book {
+      display: none;
+    }
+    .titulo {
+      font-size: 4vw;
+      margin-bottom: 10px;
+    }
+  }
+  
+  figcaption {
+    flex-grow: 1;
+    margin-right: 3%;
+  }

@@ -1,0 +1,21 @@
+<form action="" class="d-flex flex-column justify-content-center align-items-center">
+  <div class="foto-container" [ngStyle]="{ 'background-image': foto ? 'url(' + foto + ')' : 'url(../../assets/images/login/user.png)' }"></div>
+  <div class="input-file-container">
+    <label for="foto" class="input-file-label">Escolher Foto</label>
+    <input type="file" id="foto" name="foto" accept="image/*" (change)="onFotoChange($event)">
+  </div>
+    <div class="w-90">
+      <app-input-cadastro [tipoInput]="'name'" [textoPlaceHolder]="'Nome'"></app-input-cadastro>
+    </div>
+    <div class="w-90">
+      <app-input-cadastro></app-input-cadastro>
+    </div>
+    <div class="w-90">
+      <app-input-cadastro [tipoInput]="'password'" [textoPlaceHolder]="'Senha'"></app-input-cadastro>
+    </div>
+    <div class="w-90">
+      <app-input-cadastro [tipoInput]="'password'" [textoPlaceHolder]="'Confirmar Senha'"></app-input-cadastro>
+    </div>
+    <button class="button-login" routerLink="/home">Cadastrar</button>
+</form>
+  
