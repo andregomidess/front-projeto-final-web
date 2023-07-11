@@ -1,5 +1,6 @@
 const { response } = require('express');
 const User = require('../models/User');
+const Book = require('../models/Book');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const createUserToken = require('../helpers/create-user-token');

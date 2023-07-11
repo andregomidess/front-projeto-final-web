@@ -7,7 +7,7 @@ const verifyToken = require('../helpers/check-token');
 const {imageUpload} = require('../helpers/image-upload');
 const LoaderBookDB = require('../loader/loaderBooksDB');
 
-router.get('/loader', LoaderBookDB.loader); // rota para dar carga no banco
+//router.get('/loader', LoaderBookDB.loader); // rota para dar carga no banco
 router.post('/create', verifyToken, imageUpload.single("image"), BookController.create);
 router.get('/', BookController.getAll);
 router.get('/:id', BookController.getBookById);
