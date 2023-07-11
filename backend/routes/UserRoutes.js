@@ -11,5 +11,7 @@ router.get('/checkUser', UserController.checkUser);
 router.get('/:id', UserController.getUserById);
 router.patch('/edit/:id', verifyToken, imageUpload.single("image"), UserController.editUser);
 router.post('/favoriteBook', verifyToken, UserController.favoriteBook);
+router.get('/getFavoriteBooks', verifyToken, UserController.getFavoriteBooks);
+
 
 module.exports = router;

@@ -190,4 +190,19 @@ module.exports = class UserController{
           res.status(200).json({ message: 'Livro adicionado aos favoritos com sucesso' });
 
     }
+
+    static async getFavoriteBooks(req, res){
+        //pegando o usuario atual
+        const token = getToken(req);
+        const user = await getUserBytoken(token); 
+
+        if (!user) {
+            return res.status(404).json({ message: 'Usuário não encontrado' });
+        }
+      
+        const favoriteBooks = await Book.find({ _id: { $in: user.booksFavorite } });
+
+        res.status(200).json({ favoriteBooks: favoriteBooks});
+
+    }
 }
