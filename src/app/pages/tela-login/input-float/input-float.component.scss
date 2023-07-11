@@ -1,5 +1,5 @@
 .container {
-  height: 12vh;
+  height: 12.5vh;
 }
 
 .container .area-input {
@@ -40,12 +40,12 @@
 .container .area-input .labelline {
   display: inline;
   position: absolute;
-  top: 15%;
+  top: 8%;
   left: 2%;
   color: white;
   transition: 0.2s ease;
   z-index: 1111;
-  padding: 2px 8px;
+  padding: 3px 6px;
 }
 
 .container input:focus + .labelline,
