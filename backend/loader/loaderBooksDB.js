@@ -4,9 +4,9 @@ const Book = require('../models/Book');
 module.exports = class LoaderBookDB {
   static async loader() {
     const url = 'https://www.googleapis.com/books/v1/volumes';
-    const searchTerms = ['programming', 'science', 'ciencia', 'java', 'python', 'arte', 'poema', 'esporte', 'soccer', 'games', 'web', 'war', 'guerra'];
+    const searchTerms = ['programming', 'science', 'ciencia', 'java', 'python', 'arte', 'poema', 'esporte', 'soccer', 'games', 'web', 'war', 'guerra', 'life', 'politica', 'flower'];
     const maxResults = 20;
-    const fields = 'items(volumeInfo(title,subtitle,authors,publisher,publishedDate,description,industryIdentifiers,pageCount,averageRating,imageLinks,language),saleInfo(retailPrice, buyLink))';
+    const fields = 'items(volumeInfo(title,subtitle,authors,publisher,publishedDate,description,industryIdentifiers,pageCount,averageRating,imageLinks,language,categories),saleInfo(retailPrice, buyLink))';
 
     try {
       for (const searchTerm of searchTerms) {
@@ -27,10 +27,10 @@ module.exports = class LoaderBookDB {
             imageLinks = null,
             language = null,
             averageRating = null,
+            categories,
           } = bookData;
 
           const saleInfo = bookData.saleInfo || {};
-          //const authorss = bookData.authors.join(', ') || null;
           const { retailPrice, buyLink } = saleInfo;
           const amount = retailPrice?.amount || null;
           const industryIdentifier = industryIdentifiers?.[0]?.identifier || null;
@@ -47,8 +47,9 @@ module.exports = class LoaderBookDB {
             thumbnail: imageLinks?.thumbnail,
             language,
             amount,
-            buyLink,
+            buyLink: buyLink || null,
             averageRating,
+            categories: categories,
           });
           console.log(book);
 

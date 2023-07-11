@@ -10,6 +10,9 @@ app.use(cors({credentials: true, origin: 'https://localhost:4200'}));
 app.use(express.static('public'))
 
 const UserRoutes = require('./routes/UserRoutes')
+const BookRoutes = require('./routes/BookRoutes')
+
 app.use('/users', UserRoutes);
+app.use('/books', BookRoutes);
 
 app.listen(3333);

@@ -116,7 +116,6 @@ module.exports = class UserController{
     }
 
     static async editUser(req, res){
-        const id = req.params.id;
         const token = getToken(req);
         const user = await getUserBytoken(token); 
         const {name, email, password, confirmPassword} = req.body;
@@ -166,6 +165,29 @@ module.exports = class UserController{
             res.status(500).json({message: e});
             return;
         }
+
+    }
+
+    static async favoriteBook(req, res){
+        //pegando o usuario atual
+        const token = getToken(req);
+        const user = await getUserBytoken(token); 
+        const { _id } = req.body;
+
+        if (!user) {
+            return res.status(404).json({ message: 'Usuário não encontrado' });
+          }
+      
+          // Verifica se o livro já está nos favoritos
+          if (user.booksFavorite.includes(_id)) {
+            return res.status(400).json({ message: 'O livro já está nos favoritos' });
+          }
+      
+          // Adiciona o livro ao array de favoritos
+          user.booksFavorite.push(bookId);
+          await user.save();
+      
+          res.status(200).json({ message: 'Livro adicionado aos favoritos com sucesso' });
 
     }
 }

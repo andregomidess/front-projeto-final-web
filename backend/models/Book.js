@@ -44,6 +44,9 @@ const Book = mongoose.model(
         },
         buyLink: {
             type: String,
+        },
+        categories: {
+            type: Array,
         }
     },
     {timestamps: true},
