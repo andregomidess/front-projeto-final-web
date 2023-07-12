@@ -10,16 +10,17 @@ import { TabelaAcervosComponent } from './atualizar-remover-acervos/tabela-acerv
 import { GerenciamentoLivrosComponent } from './gerenciamento-livros/gerenciamento-livros.component';
 import { TabelaStatusComponent } from './gerenciamento-livros/tabela-status/tabela-status.component';
 import { CampoBuscaLivroComponent } from './gerenciamento-livros/campo-busca-livro/campo-busca-livro.component';
+import { TelaFavComponent } from './tela-fav/tela-fav.component';
 
 
 
 
 @NgModule({
-  declarations: [CardLivroComponent, TelaAcervosComponent, CampoBsucaComponent, TelaCadastrarAcervosComponent, AtualizarRemoverAcervosComponent, CampoBuscaComponent, TabelaAcervosComponent, GerenciamentoLivrosComponent, TabelaStatusComponent, CampoBuscaLivroComponent],
+  declarations: [CardLivroComponent, TelaAcervosComponent, CampoBsucaComponent, TelaCadastrarAcervosComponent, AtualizarRemoverAcervosComponent, CampoBuscaComponent, TabelaAcervosComponent, GerenciamentoLivrosComponent, TabelaStatusComponent, CampoBuscaLivroComponent, TelaFavComponent],
   imports: [
     CommonModule
   ], exports: [
-    CardLivroComponent, TelaAcervosComponent, TelaCadastrarAcervosComponent, AtualizarRemoverAcervosComponent, GerenciamentoLivrosComponent
+    CardLivroComponent, TelaAcervosComponent, TelaCadastrarAcervosComponent, AtualizarRemoverAcervosComponent, GerenciamentoLivrosComponent, TelaFavComponent
   ]
 })
 export class ConteudoPaginaModule { }

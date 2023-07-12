@@ -29,7 +29,7 @@ export class FormLoginComponent implements OnDestroy {
     ) {
       this.form = this.fb.group({
         email: ['', [Validators.required, Validators.email]],
-        password: ['', Validators.required]
+        password: ['', Validators.required, Validators.minLength(6)]
       })
 
       this.formValueChangesSubscription = this.form.valueChanges.subscribe(formValue => {

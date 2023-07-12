@@ -6,7 +6,6 @@ import jwtDecode from 'jwt-decode';
 
 
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -34,7 +33,7 @@ export class AuthService {
   async createAccount(account: any){
     try {
       const result = await this.http.post<Token>(`${environment.api}/users/register`, account).toPromise();
-      console.log('DEU CERTO', result);
+      console.log('Sucesso ao criar a conta', result);
       return result;
     } catch (error) {
       console.error('Erro ao criar a conta', error);
@@ -66,7 +65,6 @@ export class AuthService {
   //   if (date === undefined) {
   //     return false;
   //   }
-
   //   return !(date && date.valueOf() > new Date().valueOf())
   // }
 
