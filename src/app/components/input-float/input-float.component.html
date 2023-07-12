@@ -1,0 +1,13 @@
+<div class="container" *ngIf="form" [formGroup]="form">
+  <div class="area-input">
+    <input [type]="tipoInput" required class="form-control" [formControlName]="controlName">
+    <div class="labelline">{{textoPlaceHolder}}</div>
+  </div>
+</div>
+
+<div class="container" *ngIf="!form">
+  <div class="area-input">
+    <input [type]="tipoInput" required class="form-control">
+    <div class="labelline">{{textoPlaceHolder}}</div>
+  </div>
+</div>

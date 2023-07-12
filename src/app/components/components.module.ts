@@ -4,14 +4,16 @@ import { HeaderComponent } from './header/header.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { PerfilComponent } from './side-bar/perfil/perfil.component';
 import { NavegacaoComponent } from './side-bar/navegacao/navegacao.component';
+import { InputFloatComponent } from './input-float/input-float.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, SideBarComponent, PerfilComponent, NavegacaoComponent],
+  declarations: [HeaderComponent, SideBarComponent, PerfilComponent, NavegacaoComponent, InputFloatComponent],
   imports: [
-    CommonModule
+    CommonModule, ReactiveFormsModule
   ],
-  exports: [HeaderComponent, SideBarComponent]
+  exports: [HeaderComponent, SideBarComponent, InputFloatComponent]
 })
 export class ComponentsModule { }

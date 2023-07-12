@@ -13,6 +13,10 @@ import { InfoLivrosComponent } from './pages/info-livros/info-livros.component';
 import { ComponentsModule } from './components/components.module';
 import { TelaCadastroComponent } from './pages/tela-cadastro/tela-cadastro.component';
 import { TelaCadastroModule } from './pages/tela-cadastro/tela-cadastro.module';
+import { AuthService } from './shared/auth.service';
+import { httpInterceptorProviders } from './interceptor';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -31,11 +35,12 @@ import { TelaCadastroModule } from './pages/tela-cadastro/tela-cadastro.module';
     TelaLoginModule,
     TelaHomeModule,
     RouterModule,
-    ComponentsModule,
     TelaCadastroModule,
+    HttpClientModule,
+    ComponentsModule
     
   ],
-  providers: [],
+  providers: [AuthService, httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

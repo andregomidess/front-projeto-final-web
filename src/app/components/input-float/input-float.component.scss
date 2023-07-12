@@ -1,0 +1,53 @@
+.container{
+  height: 5rem;
+  .area-input{
+    position: relative;
+    height: inherit ;
+    input{
+      position: absolute;
+      background: rgba(34, 40, 48, 0.7);
+      border-radius: 10px;
+      height: 70%;
+      padding: 0 10px;
+      color: black;
+      border: none;
+      transition: 0.1s ease;
+      z-index: 1111;
+
+
+      &:focus{
+        border: #65DDF9 solid 2px;
+        outline: none;
+        background: transparent;
+
+      }
+      &:hover {
+        border: #65DDF9 solid 2px;
+      }
+      &:hover + .labelline{
+        //border: #65DDF9 solid 2px;
+        color: #65DDF9;
+      }
+    }
+    .labelline{
+      display: inline;
+      position: absolute;
+      top: 20%;
+      left: 3%;
+      color: white;
+      transition: 0.2s ease;
+      z-index: 1111;
+      padding: 2px 8px 2px 8px;
+
+    }
+  }
+}
+
+input:focus + .labelline,
+input:valid + .labelline {
+  transform: translate(0px, -25px) scale(0.88);
+  color: black !important;
+  font-weight: bold;
+  background-color: #65DDF9;
+  border-radius: .3rem;
+}

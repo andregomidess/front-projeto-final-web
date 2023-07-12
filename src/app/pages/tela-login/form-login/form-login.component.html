@@ -1,10 +1,13 @@
-<form action="" class="d-flex flex-column justify-content-center align-items-center">
+<form (ngSubmit)="onSubmit()" [formGroup]="form"  class="d-flex flex-column justify-content-center align-items-center">
   <div class="w-90">
-    <app-input-float></app-input-float>
+    <app-input-float [form]="form" [controlName]="'email'"></app-input-float>
   </div>
   <div class="w-90">
-    <app-input-float [tipoInput]="'password'" [textoPlaceHolder]="'Senha'"></app-input-float>
+    <app-input-float [tipoInput]="'password'" [textoPlaceHolder]="'Senha'" [form]="form" [controlName]="'password'"></app-input-float>
   </div>
-  <p class="mt-3 mb-3 text-center">É novo por aqui? cadastre-se</p>
-  <button class="button-login" routerLink="/home">Login</button>
+  <ng-container *ngIf="loginError">
+    <p id="dados-invalidos">!Dados inválidos</p>
+  </ng-container>
+  <p class="mt-3 mb-3 text-center" routerLink="/cadastrar">É novo por aqui? cadastre-se</p>
+  <button class="button-login">Login</button>
 </form>
