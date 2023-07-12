@@ -194,64 +194,64 @@ module.exports = class BookController {
     }
 
     if (title) {
-        updatedData.title = title;
-      }
-    
-      if (subtitle) {
-        updatedData.subtitle = subtitle;
-      }
-    
-      if (authors) {
-        updatedData.authors = authors;
-      }
-    
-      if (publisher) {
-        updatedData.publisher = publisher;
-      }
-    
-      if (publishedDate) {
-        updatedData.publishedDate = publishedDate;
-      }
-    
-      if (description) {
-        updatedData.description = description;
-      }
-    
-      if (ISBN) {
-        updatedData.ISBN = ISBN;
-      }
-    
-      if (pageCount) {
-        updatedData.pageCount = pageCount;
-      }
-    
-      if (averageRating) {
-        updatedData.averageRating = averageRating;
-      }
-    
-      if (language) {
-        updatedData.language = language;
-      }
-    
-      if (amount) {
-        updatedData.amount = amount;
-      }
-    
-      if (buyLink) {
-        updatedData.buyLink = buyLink;
-      }
-      
-      if (categories) {
-        updatedData.buyLink = categories;
-      }
-    
-      if (req.file) {
-        updatedData.thumbnail = req.file.filename;
-      }
-      
+      updatedData.title = title;
+    }
+
+    if (subtitle) {
+      updatedData.subtitle = subtitle;
+    }
+
+    if (authors) {
+      updatedData.authors = authors;
+    }
+
+    if (publisher) {
+      updatedData.publisher = publisher;
+    }
+
+    if (publishedDate) {
+      updatedData.publishedDate = publishedDate;
+    }
+
+    if (description) {
+      updatedData.description = description;
+    }
+
+    if (ISBN) {
+      updatedData.ISBN = ISBN;
+    }
+
+    if (pageCount) {
+      updatedData.pageCount = pageCount;
+    }
+
+    if (averageRating) {
+      updatedData.averageRating = averageRating;
+    }
+
+    if (language) {
+      updatedData.language = language;
+    }
+
+    if (amount) {
+      updatedData.amount = amount;
+    }
+
+    if (buyLink) {
+      updatedData.buyLink = buyLink;
+    }
+
+    if (categories) {
+      updatedData.buyLink = categories;
+    }
+
+    if (req.file) {
+      updatedData.thumbnail = req.file.filename;
+    }
+
 
     await Book.findByIdAndUpdate(id, updatedData);
-    res.status(200).json({message: 'livro atualizado com sucesso'});
+    res.status(200).json({ message: 'livro atualizado com sucesso' });
 
   }
 }

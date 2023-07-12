@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
   selector: 'app-form-cadastro',
@@ -7,6 +10,9 @@ import { Component } from '@angular/core';
 })
 export class FormCadastroComponent {
   foto: string | undefined;
+  fotoServer!: File;
+  form!: FormGroup;
+
 
   onFotoChange(event: any) {
     const files = event.target.files;
@@ -14,18 +20,46 @@ export class FormCadastroComponent {
       const reader = new FileReader();
       reader.onload = (e: any) => {
         this.foto = e.target.result as string;
+        this.fotoServer = files[0];
       };
       reader.readAsDataURL(files[0]);
-    } else {
-      this.foto = '../../../../assets/images/login/user.png'; // Caminho para a imagem padrão
     }
   }
 
-  cadastrar() {
-    const nome = (document.getElementById('nome') as HTMLInputElement).value;
-    const email = (document.getElementById('email') as HTMLInputElement).value;
-    const senha = (document.getElementById('senha') as HTMLInputElement).value;
-    const confirmarSenha = (document.getElementById('confirmarSenha') as HTMLInputElement).value;
-
+  constructor(private authService: AuthService, private fb: FormBuilder) {
+    this.form = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+      confirmPassword: ['', Validators.required],
+    });
   }
+
+  constructFormData(){
+    const formData = new FormData();
+    formData.append('name', this.form.get('name')?.value);
+    formData.append('email', this.form.get('email')?.value);
+    formData.append('password', this.form.get('password')?.value);
+    formData.append('confirmPassword', this.form.get('confirmPassword')?.value);
+    formData.append('permission', this.form.get('permission')?.value);
+    formData.append('image', this.fotoServer);
+    return formData;
+  }
+
+  async onSubmit(){
+    const formData = this.constructFormData();
+    try{
+      if (this.form.valid){
+        const res = await this.authService.createAccount(formData);
+        console.log(res);
+
+      }else{
+        console.log('Formulario inválido');
+      }
+    }catch(error){
+      console.error(error);
+    }
+  }
+
+  
 }

@@ -19,6 +19,19 @@ button{
   color: white;
 }
 
+form{
+  width: 35vw;
+}
 
+#dados-invalidos{
+  direction: rtl;
+  font-weight: 500;
+  font-size: .9rem;
+  line-height: 120%;
+  color: red;
+  margin-bottom: .5rem;
+  margin-right: 1rem;
+  transition: 0.7s ease;
+}
 
 

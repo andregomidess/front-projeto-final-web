@@ -1,21 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardLoginComponent } from './card-login/card-login.component';
 import { FormLoginComponent } from './form-login/form-login.component';
-import { InputFloatComponent } from './input-float/input-float.component';
 import { RouterModule } from '@angular/router';
+import { TelaLoginRoutingModule } from './tela-login-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 
 
 @NgModule({
   declarations: [
-    CardLoginComponent,
     FormLoginComponent,
-    InputFloatComponent
+
   ],
   imports: [
     CommonModule,
-    RouterModule
-  ], exports: [CardLoginComponent, FormLoginComponent]
+    RouterModule,
+    TelaLoginRoutingModule,
+    ReactiveFormsModule,
+    ComponentsModule
+  ], 
+  exports: [ FormLoginComponent, ],
+ 
 })
 export class TelaLoginModule { }
