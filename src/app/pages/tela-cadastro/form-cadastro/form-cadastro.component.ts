@@ -67,7 +67,7 @@ export class FormCadastroComponent {
     formData.append('email', this.form.get('email')?.value);
     formData.append('password', this.form.get('password')?.value);
     formData.append('confirmPassword', this.form.get('confirmPassword')?.value);
-    formData.append('permission', this.form.get('permission')?.value);
+    //formData.append('permission', this.form.get('permission')?.value);
     formData.append('image', this.fotoServer);
     return formData;
   }
