@@ -5,7 +5,7 @@
   <ng-container>
     <div class="d-flex flex-wrap justify-content-center">
       <ng-container *ngFor="let book of this.allBooks">
-        <app-card-livro [bookData]="book"></app-card-livro>
+        <app-card-livro routerLink="/info"  [bookData]="book"></app-card-livro>
       </ng-container>
     </div>
   </ng-container>

@@ -14,7 +14,7 @@ export class CardLivroComponent implements OnInit{
 
 
   ngOnInit(): void {
-    this.urlImage = `${environment.api}/images/users/${this.bookData.thumbnail}`;
+    this.urlImage = `${environment.api}/images/books/${this.bookData.thumbnail}`;
   }
 
 }
