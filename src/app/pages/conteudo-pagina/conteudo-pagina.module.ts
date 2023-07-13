@@ -8,6 +8,8 @@ import { AtualizarRemoverAcervosComponent } from './atualizar-remover-acervos/at
 import { CampoBuscaComponent } from './atualizar-remover-acervos/campo-busca/campo-busca.component';
 import { TabelaAcervosComponent } from './atualizar-remover-acervos/tabela-acervos/tabela-acervos.component';
 import { CounteudoPaginaRoutingModule } from './conteudo-pagina-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -15,7 +17,7 @@ import { CounteudoPaginaRoutingModule } from './conteudo-pagina-routing.module';
 @NgModule({
   declarations: [CardLivroComponent, TelaAcervosComponent, CampoBsucaComponent, TelaCadastrarAcervosComponent, AtualizarRemoverAcervosComponent, CampoBuscaComponent, TabelaAcervosComponent],
   imports: [
-    CommonModule, CounteudoPaginaRoutingModule
+    CommonModule, CounteudoPaginaRoutingModule, ReactiveFormsModule
   ], exports: [
     CardLivroComponent, TelaAcervosComponent, TelaCadastrarAcervosComponent, AtualizarRemoverAcervosComponent
   ]

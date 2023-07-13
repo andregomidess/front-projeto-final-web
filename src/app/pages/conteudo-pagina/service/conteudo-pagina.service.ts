@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, take } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
+import { Book } from '../../../models/Book.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,12 @@ export class ConteudoPaginaService {
       take(1)
     );
   }
-  
+
+  createBook(book: any){
+    return this.http.post<Book>(`${environment.api}/books/create`, book).pipe(
+      take(1)
+    );
+  }
 
 
 }

@@ -19,7 +19,8 @@ module.exports = class BookController {
       thumbnail = null,
       language = null,
       amount = null,
-      buyLink = null
+      buyLink = null,
+      categories = null,
     } = req.body;
 
     //upload de imagem
@@ -77,7 +78,8 @@ module.exports = class BookController {
       language,
       amount,
       buyLink,
-      thumbnail: image
+      thumbnail: image,
+      categories: categories
     })
 
     try {

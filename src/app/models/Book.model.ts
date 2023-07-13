@@ -12,5 +12,5 @@ export interface Book {
     language?: string;
     amount?: number;
     buyLink?: string;
-    categories?: string[];
+    categories?: string;
   }

@@ -46,7 +46,7 @@ const Book = mongoose.model(
             type: String,
         },
         categories: {
-            type: Array,
+            type: String,
         }
     },
     {timestamps: true},
