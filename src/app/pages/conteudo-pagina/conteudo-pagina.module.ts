@@ -7,6 +7,7 @@ import { TelaCadastrarAcervosComponent } from './tela-cadastrar-acervos/tela-cad
 import { AtualizarRemoverAcervosComponent } from './atualizar-remover-acervos/atualizar-remover-acervos.component';
 import { CampoBuscaComponent } from './atualizar-remover-acervos/campo-busca/campo-busca.component';
 import { TabelaAcervosComponent } from './atualizar-remover-acervos/tabela-acervos/tabela-acervos.component';
+import { CounteudoPaginaRoutingModule } from './conteudo-pagina-routing.module';
 
 
 
@@ -14,7 +15,7 @@ import { TabelaAcervosComponent } from './atualizar-remover-acervos/tabela-acerv
 @NgModule({
   declarations: [CardLivroComponent, TelaAcervosComponent, CampoBsucaComponent, TelaCadastrarAcervosComponent, AtualizarRemoverAcervosComponent, CampoBuscaComponent, TabelaAcervosComponent],
   imports: [
-    CommonModule
+    CommonModule, CounteudoPaginaRoutingModule
   ], exports: [
     CardLivroComponent, TelaAcervosComponent, TelaCadastrarAcervosComponent, AtualizarRemoverAcervosComponent
   ]

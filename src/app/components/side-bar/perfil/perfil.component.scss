@@ -1,17 +1,20 @@
 .perfil-container{
-    background: linear-gradient(white, white) padding-box,
-    linear-gradient(45deg, #65DDF9, #03A2EB, #0281BB) border-box;
     border-bottom: 2px solid transparent;
     .perfil-content{
-      width: 100%;
-  
+      width: 90%;
+      z-index: -1;
+      margin-top: 2rem;
+      padding-bottom: 1rem;
+      background: linear-gradient(white, white) padding-box,
+      linear-gradient(45deg, #65DDF9, #03A2EB, #0281BB) border-box;
+      border-bottom: 2px solid transparent;
+
       .foto{
         height: 5rem;
         width: 5rem;
-        background-image: url('../../../../assets/images/home/side-bar/foto_perfil.jpeg');
         background-position: center;
         background-size: cover;
-        border: 2px solid #52FF61;
+        border: 2px solid #72c9f1;
         margin-right: 1em;
       }
       .nome-cargo{
@@ -37,3 +40,8 @@
     width: 90%;
   }
   
+
+  //   .foto{
+  //     zoom: 0.80;
+  //   }
+  // }

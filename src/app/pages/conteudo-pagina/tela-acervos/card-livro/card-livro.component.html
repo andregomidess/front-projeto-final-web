@@ -3,7 +3,7 @@
     <img src="../../../../../../assets/images/home/card-livro/tres-pontinhos.svg" alt="">
   </figure>
   <figure id="capa-livro">
-    <img src="https://staticbv.bvirtual.com.br/publicacoes/39590/thumbs/thumbnail_397_x_595.jpg" alt="capa livro">
+    <img [src]="this.bookData.thumbnail" alt="capa livro">
   </figure>
   <div class="rating">
     <img src="../../../../../../assets/images/home/card-livro/estrela.svg" alt="estrela rating">
@@ -14,8 +14,8 @@
     <i>(2)</i>
   </div>
   <div class="info-livro">
-    <h2>Java: como Programar</h2>
-    <p>Harvey M. Deitel, Paul J. Deitel</p>
+    <h2>{{bookData.title}}</h2>
+    <p>{{bookData.authors || 'Sem autor'}}</p>
   </div>
 
 </div>

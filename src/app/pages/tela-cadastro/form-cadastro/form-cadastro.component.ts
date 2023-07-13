@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
@@ -26,13 +26,39 @@ export class FormCadastroComponent {
     }
   }
 
-  constructor(private authService: AuthService, private fb: FormBuilder) {
+  constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) {
     this.form = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
-      confirmPassword: ['', Validators.required],
+      name: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]],
+      password: [null, Validators.required],
+      confirmPassword: [null, [Validators.required, this.equalsTo('password')]],
     });
+  }
+
+  equalsTo(otherField: string){
+    const validator = (formControl: FormControl)=> {
+      if (otherField == null){
+        throw new Error('É necessário informar o campo');
+      }
+
+      if (!formControl.root || !(<FormGroup>formControl.root).controls){
+        return null;
+      }
+
+      const field = (<FormGroup>formControl.root).get(otherField);
+
+      if (!field){
+        throw new Error('É necessário informar um campo válido');
+      }
+
+
+      if(field.value !== formControl.value){
+        return {equalsTo: otherField}
+      }
+      return null;
+    }
+
+    return validator;
   }
 
   constructFormData(){
@@ -52,6 +78,8 @@ export class FormCadastroComponent {
       if (this.form.valid){
         const res = await this.authService.createAccount(formData);
         console.log(res);
+        this.router.navigate(['/login']);
+
 
       }else{
         console.log('Formulario inválido');

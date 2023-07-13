@@ -6,13 +6,14 @@ import { PerfilComponent } from './side-bar/perfil/perfil.component';
 import { NavegacaoComponent } from './side-bar/navegacao/navegacao.component';
 import { InputFloatComponent } from './input-float/input-float.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
 @NgModule({
   declarations: [HeaderComponent, SideBarComponent, PerfilComponent, NavegacaoComponent, InputFloatComponent],
   imports: [
-    CommonModule, ReactiveFormsModule
+    CommonModule, ReactiveFormsModule, RouterModule
   ],
   exports: [HeaderComponent, SideBarComponent, InputFloatComponent]
 })

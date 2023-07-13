@@ -19,7 +19,7 @@ const User = mongoose.model(
         },
         permission: {
             type: String,
-            default: 'USUARIO'
+            default: 'USUARIO',
         },
         image: {
             type: String,

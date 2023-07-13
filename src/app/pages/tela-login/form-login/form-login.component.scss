@@ -17,6 +17,10 @@ button{
   height: 3rem;
   width: 90%;
   color: white;
+
+  &:disabled{
+    background-color: #cccc;
+  }
 }
 
 form{

@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(cors());
 
 // pasta para imagens
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 const UserRoutes = require('./routes/UserRoutes')
 const BookRoutes = require('./routes/BookRoutes')
