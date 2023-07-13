@@ -75,6 +75,6 @@
         <textarea formControlName="description" class="form-control" id="descricao" rows="6"></textarea>
       </div>
     </div>
-    <button type="button" class="btn btn-primary mt-4">Enviar</button>
+    <button (click)="onSubmit()" class="btn btn-primary mt-4">Enviar</button>
     <!-- <pre>{{form.value | json}}</pre> -->
   </form>

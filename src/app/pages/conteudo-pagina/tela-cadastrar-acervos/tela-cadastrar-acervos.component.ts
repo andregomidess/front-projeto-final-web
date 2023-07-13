@@ -50,6 +50,7 @@ export class TelaCadastrarAcervosComponent {
 
     onSubmit(){
       const book = this.createFormData();
+      console.log(book);
       this.conteudoPaginaService.createBook(book).subscribe({
         next : (res) => {
           console.log(res);

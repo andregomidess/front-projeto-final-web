@@ -3,7 +3,7 @@
     <img src="../../../../../../assets/images/home/card-livro/tres-pontinhos.svg" alt="">
   </figure>
   <figure id="capa-livro">
-    <img [src]="this.bookData.thumbnail" alt="capa livro">
+    <img [src]="this.bookData.thumbnail || this.urlImage" alt="capa livro">
   </figure>
   <div class="rating">
     <img src="../../../../../../assets/images/home/card-livro/estrela.svg" alt="estrela rating">

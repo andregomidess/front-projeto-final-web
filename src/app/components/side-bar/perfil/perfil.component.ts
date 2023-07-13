@@ -11,7 +11,6 @@ export class PerfilComponent implements OnInit {
 
   ngOnInit(): void {
     this.urlImage = `${environment.api}/images/users/${this.userData.image}`;
-    console.log(this.urlImage);
   }
 
   @Input() userData!: User;
