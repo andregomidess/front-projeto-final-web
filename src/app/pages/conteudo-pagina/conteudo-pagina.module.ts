@@ -7,20 +7,17 @@ import { TelaCadastrarAcervosComponent } from './tela-cadastrar-acervos/tela-cad
 import { AtualizarRemoverAcervosComponent } from './atualizar-remover-acervos/atualizar-remover-acervos.component';
 import { CampoBuscaComponent } from './atualizar-remover-acervos/campo-busca/campo-busca.component';
 import { TabelaAcervosComponent } from './atualizar-remover-acervos/tabela-acervos/tabela-acervos.component';
-import { GerenciamentoLivrosComponent } from './gerenciamento-livros/gerenciamento-livros.component';
-import { TabelaStatusComponent } from './gerenciamento-livros/tabela-status/tabela-status.component';
-import { CampoBuscaLivroComponent } from './gerenciamento-livros/campo-busca-livro/campo-busca-livro.component';
 import { TelaFavComponent } from './tela-fav/tela-fav.component';
 
 
 
 
 @NgModule({
-  declarations: [CardLivroComponent, TelaAcervosComponent, CampoBsucaComponent, TelaCadastrarAcervosComponent, AtualizarRemoverAcervosComponent, CampoBuscaComponent, TabelaAcervosComponent, GerenciamentoLivrosComponent, TabelaStatusComponent, CampoBuscaLivroComponent, TelaFavComponent],
+  declarations: [CardLivroComponent, TelaAcervosComponent, CampoBsucaComponent, TelaCadastrarAcervosComponent, AtualizarRemoverAcervosComponent, CampoBuscaComponent, TabelaAcervosComponent,  TelaFavComponent],
   imports: [
     CommonModule
   ], exports: [
-    CardLivroComponent, TelaAcervosComponent, TelaCadastrarAcervosComponent, AtualizarRemoverAcervosComponent, GerenciamentoLivrosComponent, TelaFavComponent
+    CardLivroComponent, TelaAcervosComponent, TelaCadastrarAcervosComponent, AtualizarRemoverAcervosComponent, TelaFavComponent
   ]
 })
 export class ConteudoPaginaModule { }
