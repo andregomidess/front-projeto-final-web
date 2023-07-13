@@ -1,25 +1,67 @@
-svg{
-    cursor: pointer;
-}
-
-.status-box {
+.table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .table th {
+    background-color: #85bcff;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .table-striped tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  .perfil {
+    vertical-align: middle;
+  }
+  
+  .status-box {
     display: inline-block;
-    padding: 0px 6px;
-    border-radius: 20px;
+    padding: 10px;
+    border-radius: 50%;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
     color: #ff0000;
-    background-color: #ff0000;
+    background-image: linear-gradient(135deg, #ff6d6d, #ff0000); /* Gradiente vermelho */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Efeito 3D */
   }
   
   .status-box-disponivel {
     display: inline-block;
-    padding: 0px 6px;
-    border-radius: 20px;
+    padding: 10px;
+    border-radius: 50%;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
     color: #00ff00;
-    background-color: #00ff00;
+    background-image: linear-gradient(135deg, #00ff6b, #00cc15); /* Gradiente verde */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Efeito 3D */
+  }
+  
+  svg {
+    cursor: pointer;
+  }
+  
+  /* Adições de estilo para os ícones */
+  figcaption {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+  
+  .bi-trash-fill {
+    fill: red;
+  }
+  
+  .bi-pencil-fill {
+    fill: #02fa82;
   }

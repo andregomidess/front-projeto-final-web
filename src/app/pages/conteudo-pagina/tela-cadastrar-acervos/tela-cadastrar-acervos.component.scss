@@ -1,44 +1,58 @@
-form{
-    position: relative;
-    background: linear-gradient(white, white) padding-box,
-    linear-gradient(268.16deg, #65DDF9, #03A2EB, #0281BB) border-box;
-    border-top: 3px solid transparent;
-  
-    .btn{
-      position: absolute;
-      right:0;
-    }
-  }
-  
-h1{
-    font-weight: 500;
-    font-size: 1.5em;
-    line-height: 120%;
-    color: #505050;
+form {
+  position: relative;
+  border-top: 3px solid transparent;
 }
 
-.btn-anexar{
+.btn {
+  position: absolute;
+  right: 0;
+}
+
+.titulo {
+  background: linear-gradient(
+      white,
+      white
+    ) padding-box, linear-gradient(268.16deg, #65DDF9, #03A2EB, #0281BB) border-box;
+  border-bottom: 3px solid transparent;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 1.5em;
+  line-height: 120%;
+  color: #505050;
+}
+
+.btn-anexar {
   background-color: white;
   color: #0281BB;
   padding: 2%;
   border-radius: 8px;
   fill: #0281BB;
-  &:hover{
-    background-color: #0281BB;
-    color: white;
-    fill: white;
-  }
-  p{
-    font-weight: 600;
-    font-size: clamp(0.6rem, 1rem, 1.3rem);
-    line-height: 120%;
-  }
-  div{
-    border-left: 1px solid  #CCCCCC;
-    color: #CCCCCC;
-    p{
-      font-weight: 300;
-      margin-left: 5px;
-    }
-  }
+  transition: background-color 0.3s ease, color 0.3s ease, fill 0.3s ease;
+}
+
+.btn-anexar:hover {
+  background-color: #0281BB;
+  color: white;
+  fill: white;
+}
+
+.btn-anexar p {
+  font-weight: 600;
+  font-size: clamp(0.6rem, 1rem, 1.3rem);
+  line-height: 120%;
+}
+
+.btn-anexar div {
+  border-left: 1px solid #CCCCCC;
+  color: #CCCCCC;
+}
+
+.btn-anexar div p {
+  font-weight: 300;
+  margin-left: 5px;
 }

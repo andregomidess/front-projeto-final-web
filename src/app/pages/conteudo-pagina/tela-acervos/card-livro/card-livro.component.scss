@@ -1,56 +1,81 @@
-.card-area{
+.card-area {
   height: 20rem;
   width: 17rem;
   background-color: #eeeeee;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   margin-left: 1.5rem;
   margin-top: 1.5rem;
   box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.158);
   overflow: hidden;
-
   position: relative;
+  background-image: linear-gradient(135deg, #9eb6f9, #eeeeee, #eeeeee);
+}
 
-  #tres-pontinhos{
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: .5rem;
-    cursor: pointer;
-  }
+.card-area #tres-pontinhos {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
 
-  .rating{
-    i{
-      font-size: clamp(0.5rem, 0.8rem, 0.9rem);
-      margin-left: .3rem;
-    }
-  }
+.card-area #tres-pontinhos:hover {
+  transform: rotate(90deg);
+}
 
-  #capa-livro{
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    &:hover{
-      transform: scale(1.2);
-    }
-    img{
-      height: 9rem;
-      border-radius: 3px;
-    }
-  }
-  .info-livro{
-    cursor: pointer;
-    h2{
-      text-align: center;
-      font-size: clamp(0.8rem, 1.2rem, 1.4rem);
-      color: #494949;
-    }
+.card-area .rating {
+  display: flex;
+  align-items: center;
+}
 
+.card-area .rating i {
+  font-size: clamp(0.5rem, 0.8rem, 0.9rem);
+  margin-left: 0.3rem;
+  font-weight: bold; 
+  color: #f9b71d;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
 
-    p{
-      text-align: center;
-      font-size: clamp(0.4rem, 0.8rem, 0.8rem);
-      color: #6d6d6d;
-    }
-  }
+.card-area #capa-livro {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
 
+.card-area #capa-livro:hover {
+  transform: scale(1.2);
+}
 
+.card-area #capa-livro img {
+  height: 9rem;
+  border-radius: 3px;
+  border: 4px solid #fff; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.card-area .info-livro h2 {
+  text-align: center;
+  font-size: clamp(0.8rem, 1.2rem, 1.4rem);
+  color: #494949;
+  font-weight: bold; 
+  position: relative;
+}
+
+.card-area .info-livro h2::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 2px;
+  background-color: rgba($color: #000000, $alpha: 0.2);
+}
+
+.card-area .info-livro p {
+  text-align: center;
+  font-size: clamp(0.4rem, 0.8rem, 0.8rem);
+  color: #6d6d6d;
+  margin-top: 0.5rem;
 }

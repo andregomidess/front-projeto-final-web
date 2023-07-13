@@ -1,9 +1,14 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 
 .titulo{
-    background: linear-gradient(white, white) padding-box,
-    linear-gradient(268.16deg, #65DDF9, #03A2EB, #0281BB) border-box;
+    background: linear-gradient(
+      white,
+      white
+    ) padding-box, linear-gradient(268.16deg, #65DDF9, #03A2EB, #0281BB) border-box;
     border-bottom: 3px solid transparent;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
   
 h1{
