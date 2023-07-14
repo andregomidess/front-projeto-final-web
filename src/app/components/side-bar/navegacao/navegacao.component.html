@@ -5,14 +5,16 @@
         <img src="../../../assets/images/home/side-bar/livro-i.svg" alt="icone livro" class="me-md-2">
         <p>Acervos</p>
       </li>
-      <li class="d-flex ms-md-2 p-3" routerLink="/home/cadastrar" (click)="changeBackgroundColor('cadastrar')" [ngClass]="{'selected': selectedItem === 'cadastrar'}">
-        <img src="../../../assets/images/home/side-bar/new-book-i.svg" alt="icone livro" class="me-md-2">
-        <p>Cadastrar Acervos</p>
-      </li>
-      <li class="d-flex ms-md-2 p-3" routerLink="/home/atualizar-remover" (click)="changeBackgroundColor('atualizar')" [ngClass]="{'selected': selectedItem === 'atualizar'}">
-        <img src="../../../assets/images/home/side-bar/update-book-i.svg" alt="icone livro" class="me-md-2">
-        <p>Atualizar/remover Acervos</p>
-      </li>
+      <ng-container *ngIf="userData.permission === 'ADMIN'">
+        <li class="d-flex ms-md-2 p-3" routerLink="/home/cadastrar" (click)="changeBackgroundColor('cadastrar')" [ngClass]="{'selected': selectedItem === 'cadastrar'}">
+          <img src="../../../assets/images/home/side-bar/new-book-i.svg" alt="icone livro" class="me-md-2">
+          <p>Cadastrar Acervos</p>
+        </li>
+        <li class="d-flex ms-md-2 p-3" routerLink="/home/atualizar-remover" (click)="changeBackgroundColor('atualizar')" [ngClass]="{'selected': selectedItem === 'atualizar'}">
+          <img src="../../../assets/images/home/side-bar/update-book-i.svg" alt="icone livro" class="me-md-2">
+          <p>Atualizar/remover Acervos</p>
+        </li>
+      </ng-container>
   
       <li routerLink="/home/favoritos" class="d-flex ms-md-2 p-3" (click)="changeBackgroundColor('fav')" [ngClass]="{'selected': selectedItem === 'fav'}">
         <img src="../../../assets/images/home/side-bar/star.svg" alt="icone livro" class="me-md-2">
