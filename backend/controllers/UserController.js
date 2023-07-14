@@ -1,4 +1,3 @@
-const { response } = require('express');
 const User = require('../models/User');
 const Book = require('../models/Book');
 const bcrypt = require('bcrypt');
@@ -118,8 +117,8 @@ module.exports = class UserController{
 
     static async editUser(req, res){
         const token = getToken(req);
-        const user = await getUserByToken(token); 
-        const {name, email, password, confirmPassword} = req.body;
+        const user = await getUserByToken(token);
+        const {name, email, password, confirmPassword, permission} = req.body;
 
         if (req.file){
             user.image = req.file.filename;
@@ -136,6 +135,10 @@ module.exports = class UserController{
         if (!email){
             res.status(422).json({message: 'O email é obrigatório'});
             return
+        }
+
+        if(permission){
+          user.permission = permission;
         }
 
         const userExists = await User.findOne({email: email});
@@ -174,23 +177,23 @@ module.exports = class UserController{
     static async favoriteBook(req, res){
         //pegando o usuario atual
         const token = getToken(req);
-        const user = await getUserByToken(token); 
+        const user = await getUserByToken(token);
         const { bookId } = req.body;
 
         if (!user) {
             res.status(404).json({ message: 'Usuário não encontrado' });
-            return; 
+            return;
           }
-      
+
           // Verifica se o livro já está nos favoritos
           if (user.booksFavorite.includes(bookId)) {
             return res.status(400).json({ message: 'O livro já está nos favoritos' });
           }
-      
+
           // Adiciona o livro ao array de favoritos
           user.booksFavorite.push(bookId);
           await user.save();
-      
+
           res.status(200).json({ message: 'Livro adicionado aos favoritos com sucesso' });
 
     }
@@ -199,12 +202,12 @@ module.exports = class UserController{
         try{
             //pegando o usuario atual
             const token = getToken(req);
-            const user = await getUserByToken(token); 
+            const user = await getUserByToken(token);
             if (!user) {
                 res.status(404).json({ message: 'Usuário não encontrado' });
                 return;
             }
-        
+
             const favoriteBooks = await Book.find({ _id: { $in: user.booksFavorite } });
 
             res.status(200).send(favoriteBooks);

@@ -11,16 +11,13 @@ p{
 
 }
 button{
-  background: linear-gradient(268.16deg, #65DDF9 -11.82%, #03A2EB 65.12%, #0281BB 142.06%);
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.3);
   border-radius: 0.8rem;
   height: 3rem;
   width: 90%;
   color: white;
+  background: linear-gradient(268.16deg, #65DDF9 -11.82%, #03A2EB 65.12%, #0281BB 142.06%);
 
-  &:disabled{
-    background-color: #cccc;
-  }
 }
 
 form{

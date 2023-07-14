@@ -28,10 +28,10 @@ export class FormCadastroComponent {
 
   constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) {
     this.form = this.fb.group({
-      name: ['', Validators.required, Validators.minLength(3)],
+      name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required, Validators.minLength(6)],
-      confirmPassword: ['', Validators.required, Validators.minLength(6), this.equalsTo('password')],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['',[ Validators.required, this.equalsTo('password')]],
     });
   }
 
@@ -87,5 +87,5 @@ export class FormCadastroComponent {
     }
   }
 
-  
+
 }
