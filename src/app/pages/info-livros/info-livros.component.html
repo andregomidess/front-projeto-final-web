@@ -1,12 +1,12 @@
 <section class="tela">
 
   <div class="container">
-    <a (click)="favoriteBook(book._id)"  id="favoritar" class="bottom"><i class="fas fa-star"></i>FAVORITAR</a>
-
+    <a (click)="favoriteBook(book._id)"  id="favoritar" class="bottom"><i class="fas fa-star me-md-2"></i>FAVORITAR</a>
+    <p class="bottom" id="msg" [ngStyle]="showMessage? {'display': 'inline'} : {'display': 'none'}">{{ message }}</p>
     <a class="bottom" routerLink="/home/acervos"><i class="fas fa-arrow-left"></i> VOLTAR</a>
     <div class="cover">
       <div class="overlay">
-        <img [src]="urlImage" alt="Capa do Livro">
+        <img class="capa" [src]="urlImage" alt="Capa do Livro">
       </div>
       <div class="details">
         <h1 class="book_title">Título do Livro: {{book.title}}</h1>
@@ -14,12 +14,15 @@
         <p class="book_info">Editora: {{book.publisher}}</p>
         <p class="book_info">Ano de Publicação: {{book.publishedDate}}</p>
         <div class="book_stars">
-          <p class="book_info">Avaliação:</p>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
+          <p class="book_info"> Avaliação:</p>
+          <ng-container *ngIf="book.averageRating !== undefined">
+            <ng-container *ngFor="let i of getStarRange(book.averageRating)">
+              <img class="ms-md-1" id="estrela-fill" src="../../../../../assets/images/home/card-livro/estrela-fill.svg" alt="estrela rating">
+            </ng-container>
+            <ng-container *ngFor="let i of getEmptyStarRange(book.averageRating)">
+              <img class="ms-md-1" id="estrela-no-fill" src="../../../../../assets/images/home/card-livro/estrela.svg" alt="estrela rating">
+            </ng-container>
+          </ng-container>
         </div>
       </div>
     </div>

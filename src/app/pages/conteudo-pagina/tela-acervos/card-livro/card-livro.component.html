@@ -1,15 +1,23 @@
 <div class="card-area p-4 d-flex flex-column align-items-center justify-content-around">
-  
+
   <figure id="capa-livro" [routerLink]="['/info', bookData._id]">
     <img [src]="this.urlImage" alt="capa livro">
   </figure>
   <div class="rating">
+    <ng-container *ngIf="bookData.averageRating !== undefined">
+      <ng-container *ngFor="let i of getStarRange(bookData.averageRating)">
+        <img src="../../../../../assets/images/home/card-livro/estrela-fill.svg" alt="estrela rating">
+      </ng-container>
+      <ng-container *ngFor="let i of getEmptyStarRange(bookData.averageRating)">
+        <img src="../../../../../assets/images/home/card-livro/estrela.svg" alt="estrela rating">
+      </ng-container>
+    </ng-container>
+
+    <!-- <img src="../../../../../../assets/images/home/card-livro/estrela.svg" alt="estrela rating">
     <img src="../../../../../../assets/images/home/card-livro/estrela.svg" alt="estrela rating">
     <img src="../../../../../../assets/images/home/card-livro/estrela.svg" alt="estrela rating">
     <img src="../../../../../../assets/images/home/card-livro/estrela.svg" alt="estrela rating">
-    <img src="../../../../../../assets/images/home/card-livro/estrela.svg" alt="estrela rating">
-    <img src="../../../../../../assets/images/home/card-livro/estrela.svg" alt="estrela rating">
-    <i>(2)</i>
+    <img src="../../../../../../assets/images/home/card-livro/estrela.svg" alt="estrela rating"> -->
   </div>
   <div class="info-livro" [routerLink]="['/info', bookData._id]">
     <h2>{{bookData.title}}</h2>

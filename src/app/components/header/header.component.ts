@@ -10,4 +10,9 @@ export class HeaderComponent {
 
   @Input() userData!: User;
 
+  logout(){
+    localStorage.removeItem('token');
+    location.reload();
+  }
+
 }

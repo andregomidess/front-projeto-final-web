@@ -17,6 +17,20 @@ export class CardLivroComponent implements OnInit{
     this.compareUrlImage();
   }
 
+  getStarRange(rating: number | undefined): number[] {
+    if (rating === undefined) {
+      return [];
+    }
+    return Array(Math.floor(rating));
+  }
+
+  getEmptyStarRange(rating: number | undefined): number[] {
+    if (rating === undefined) {
+      return [];
+    }
+    return Array(5 - Math.floor(rating));
+  }
+
   compareUrlImage(){
     if (this.bookData.thumbnail?.startsWith('http')){
       this.urlImage = this.bookData.thumbnail;

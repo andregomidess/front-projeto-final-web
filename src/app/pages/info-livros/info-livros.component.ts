@@ -14,6 +14,9 @@ export class InfoLivrosComponent implements OnInit {
   book!: Book;
   urlImage!: string;
   bookId!: string | null;
+  msg: boolean = false;
+  showMessage: boolean = false;
+  message: string = '';
 
   constructor(private route: ActivatedRoute, private conteudoPaginaService: ConteudoPaginaService) {}
 
@@ -26,8 +29,8 @@ export class InfoLivrosComponent implements OnInit {
         this.getBookById(bookId);
       }
     });
-    
-    
+
+
   }
 
   getBookById(bookId: string){
@@ -56,19 +59,38 @@ export class InfoLivrosComponent implements OnInit {
 
   favoriteBook(bookId:any){
     const valor = {
-    
+
       bookId:this.bookId,
     }
     console.log(this.bookId);
     this.conteudoPaginaService.favoriteBook(valor).subscribe({
-      next: (res) => {
-        console.log(res);
-        //this.book = res;
+      next: () => {
+        this.showMessage = true;
+        this.message = 'Livro adicionado aos favoritos!';
+
+        setTimeout(() => {
+          // Ocultar a mensagem após 3 segundos
+          this.showMessage = false;
+        }, 3000);
       },
       error: (err) => {
         console.log(err);
       }
     });
+  }
+
+  getStarRange(rating: number | undefined): number[] {
+    if (rating === undefined) {
+      return [];
+    }
+    return Array(Math.floor(rating));
+  }
+
+  getEmptyStarRange(rating: number | undefined): number[] {
+    if (rating === undefined) {
+      return [];
+    }
+    return Array(5 - Math.floor(rating));
   }
 
 }

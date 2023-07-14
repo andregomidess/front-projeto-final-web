@@ -33,6 +33,11 @@ body {
   margin-bottom: 10px;
 }
 
+#estrela-fill #estrela-no-fill{
+  width: auto;
+  border: 0;
+}
+
 .star {
   display: inline-block;
   width: 20px;
@@ -59,6 +64,9 @@ body {
 #favoritar{
   left: 20%;
   cursor: pointer;
+  &:hover{
+    color: #fdc555;
+  }
 }
 
 
@@ -110,7 +118,7 @@ body {
   color: rgb(0, 0, 54);
 }
 
-.cover img {
+.cover .capa {
   width: 120px;
   height: auto;
   border: 1px solid #ccc;
@@ -160,8 +168,9 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-.fa-star {
-  font-size: 14px;
-  color: #ffc107;
-  margin-left: 5px;
+#msg {
+  top: 18%;
+  left: 20%;
+  color: black;
+  opacity: 0;
 }
