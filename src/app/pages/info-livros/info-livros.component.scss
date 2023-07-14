@@ -174,3 +174,33 @@ body {
   color: black;
   opacity: 0;
 }
+
+.alert-wrapper {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.alert {
+  margin-bottom: 10px;
+  background-color: #fdc555;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
+
+.alert-warning {
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+  color: #856404;
+}
+
+.alert-dismissible .btn-close {
+  position: relative;
+  top: -0.25rem;
+  right: -0.5rem;
+}

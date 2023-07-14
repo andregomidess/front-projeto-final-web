@@ -77,6 +77,22 @@ export class InfoLivrosComponent implements OnInit {
         console.log(err);
       }
     });
+    this.appendAlert('Livro Favoritado com Sucesso', 'success');
+  }
+
+  appendAlert(message: string, type: string) {
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = `
+      <div class="alert alert-${type} alert-dismissible" role="alert">
+        <div>${message}</div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    `;
+  
+    const container = document.querySelector('.container');
+    if (container instanceof Element && wrapper.firstElementChild) {
+      container.insertAdjacentElement('beforebegin', wrapper.firstElementChild);
+    }
   }
 
   getStarRange(rating: number | undefined): number[] {
