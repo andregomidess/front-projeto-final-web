@@ -13,6 +13,10 @@ export class PerfilComponent implements OnInit {
     this.urlImage = `${environment.api}/images/users/${this.userData.image}`;
   }
 
+  onImageError() {
+    this.urlImage = '../../../../assets/images/login/user.png';
+  }
+  
   @Input() userData!: User;
   urlImage: string =  '';
 

@@ -123,6 +123,8 @@ module.exports = class UserController{
 
         if (req.file){
             user.image = req.file.filename;
+        } else{
+            user.image = '../../src/assets/images/login/user.png';
         }
 
         if (!name){

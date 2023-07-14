@@ -1,13 +1,17 @@
 import { Book } from '../../../../models/Book.model';
 import { ConteudoPaginaService } from './../../service/conteudo-pagina.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import { map } from 'rxjs';
+import { SearchService } from '../../tela-acervos/search-service.component';
 
 @Component({
   selector: 'app-tabela-acervos',
   templateUrl: './tabela-acervos.component.html',
   styleUrls: ['./tabela-acervos.component.scss']
 })
-export class TabelaAcervosComponent implements OnInit {
+export class TabelaAcervosComponent implements OnInit, OnChanges {
+
+  
 
 vernome(arg0: any) {
   console.log(arg0);
@@ -21,10 +25,38 @@ vernome(arg0: any) {
     text: 'Contratado'
   };
 
-  constructor(private conteudoPaginaService: ConteudoPaginaService) {}
+  searchText: string = "";
+  constructor(private conteudoPaginaService: ConteudoPaginaService, private searchService: SearchService) {}
+  filteredBooks: any[] = [];
+  resultados: boolean = true;
+
+  filterBooks(searchText: string) {
+    if (searchText.length === 0) {
+      this.resultados = true; 
+    } else {
+      this.filteredBooks = this.allBooks.filter(book => {
+      const bookTitle = book.title.toLowerCase();
+      const searchTerm = searchText.toLowerCase();
+        
+    // Verifica se o título do livro contém o texto de busca
+    return bookTitle.includes(searchTerm);
+    });
+    if (this.filteredBooks.length === 0) {
+      this.resultados = false; 
+    }
+    }
+    
+  }
 
   ngOnInit(): void {
     this.getAllBooks();
+    this.searchService.searchText$.pipe(
+      map(searchText => searchText.toLowerCase())
+    ).subscribe(searchText => {
+      this.filterBooks(searchText);
+    });
+    
+    
 
     this.conteudoPaginaService.livroExcluido.subscribe((bookId: string) => {
       this.allBooks = this.allBooks.filter(book => book._id !== bookId);
@@ -38,6 +70,10 @@ vernome(arg0: any) {
         Object.assign(updatedBook, updatedFields.fields);
       }
     });
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.filterBooks(this.searchText);
   }
 
 
@@ -59,6 +95,9 @@ vernome(arg0: any) {
         const book: any = res;
         const {books} = book;
         this.allBooks = books
+      },
+      error: (err) => {
+        console.log(err);
       }
     })
   }

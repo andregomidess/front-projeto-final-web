@@ -7,8 +7,34 @@
         <th scope="col" class="border-0 w-15">Ações</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody *ngIf="resultados === true && filteredBooks.length === 0">
       <tr class="text-center" *ngFor="let book of this.allBooks; let i = index">
+        <td class="border-0 perfil text-center">
+            {{book.title}}
+        </td>
+        <td class="border-0">
+            {{book.publisher}}
+        </td>
+        <td class="border-0">
+            {{book.ISBN}}
+        </td>
+        <td class="border-0">
+            <div class="">
+                <figcaption class="d-inline me-md-3">
+                    <app-modal-excluir [idBook]="book._id" [titleBook]="book.title"  [modalId]="'excluirModal-' + i" ></app-modal-excluir>
+                </figcaption>
+                <figcaption class="d-inline">
+                    <app-modal-editar [book]="book" [modalId]="'editarModal-' + i"></app-modal-editar>
+                </figcaption>
+            </div>
+        </td>
+      </tr>
+    </tbody>
+    <ng-container *ngIf="filteredBooks.length === 0">
+      <p>Nenhum resultado encontrado.</p>
+    </ng-container>
+    <tbody *ngIf="filteredBooks.length > 0">
+      <tr class="text-center" *ngFor="let book of filteredBooks; let i = index">
         <td class="border-0 perfil text-center">
             {{book.title}}
         </td>
