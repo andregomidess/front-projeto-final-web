@@ -1,21 +1,19 @@
 <table class="table table-striped mt-4">
     <thead>
       <tr class="text-center">
-        <th scope="col" class="border-0">Disponibilidade</th>
-        <th scope="col" class="border-0">Nome do livro</th>
-        <!-- <th scope="col" class="border-0">Autores</th> -->
-        <th scope="col" class="border-0">Editora</th>
+        <th scope="col" class="border-0 w-25">Nome do livro</th>
+        <th scope="col" class="border-0 w-15">Editora</th>
         <th scope="col" class="border-0">ISBN</th>
-        <th scope="col" class="border-0 w-25">Ações</th>
+        <th scope="col" class="border-0 w-15">Ações</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="text-center">
+      <tr class="text-center" *ngFor="let book of this.allBooks; let i = index">
         <td class="border-0 perfil text-center">
             {{book.title}}
         </td>
         <td class="border-0">
-            autores
+            {{book.publisher}}
         </td>
         <td class="border-0">
             {{book.ISBN}}
@@ -23,7 +21,7 @@
         <td class="border-0">
             <div class="">
                 <figcaption class="d-inline me-md-3">
-                    <app-modal-excluir (click)="vernome(book.title)" [idBook]="book._id" [titleBook]="book.title"  [modalId]="'excluirModal-' + i" ></app-modal-excluir>
+                    <app-modal-excluir [idBook]="book._id" [titleBook]="book.title"  [modalId]="'excluirModal-' + i" ></app-modal-excluir>
                 </figcaption>
                 <figcaption class="d-inline">
                     <app-modal-editar [book]="book" [modalId]="'editarModal-' + i"></app-modal-editar>

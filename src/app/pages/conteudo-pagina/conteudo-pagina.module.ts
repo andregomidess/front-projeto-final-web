@@ -7,14 +7,12 @@ import { TelaCadastrarAcervosComponent } from './tela-cadastrar-acervos/tela-cad
 import { AtualizarRemoverAcervosComponent } from './atualizar-remover-acervos/atualizar-remover-acervos.component';
 import { CampoBuscaComponent } from './atualizar-remover-acervos/campo-busca/campo-busca.component';
 import { TabelaAcervosComponent } from './atualizar-remover-acervos/tabela-acervos/tabela-acervos.component';
-<<<<<<< HEAD
+
 import { TelaFavComponent } from './tela-fav/tela-fav.component';
-=======
 import { CounteudoPaginaRoutingModule } from './conteudo-pagina-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ComponentsModule } from 'src/app/components/components.module';
 
->>>>>>> 6c95a2a0f1ceeb965cc9a61cccd8f3e60bf194a1
 
 
 

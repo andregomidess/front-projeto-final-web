@@ -1,8 +1,6 @@
 <div class="card-area p-4 d-flex flex-column align-items-center justify-content-around">
-  <figure id="tres-pontinhos">
-    <img src="../../../../../../assets/images/home/card-livro/tres-pontinhos.svg" alt="">
-  </figure>
-  <figure id="capa-livro">
+  
+  <figure id="capa-livro" [routerLink]="['/info', bookData._id]">
     <img [src]="this.urlImage" alt="capa livro">
   </figure>
   <div class="rating">
@@ -13,7 +11,7 @@
     <img src="../../../../../../assets/images/home/card-livro/estrela.svg" alt="estrela rating">
     <i>(2)</i>
   </div>
-  <div class="info-livro">
+  <div class="info-livro" [routerLink]="['/info', bookData._id]">
     <h2>{{bookData.title}}</h2>
     <p>{{bookData.authors || 'Sem autor'}}</p>
   </div>

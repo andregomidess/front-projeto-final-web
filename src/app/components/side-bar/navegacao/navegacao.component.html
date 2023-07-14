@@ -14,7 +14,7 @@
         <p>Atualizar/remover Acervos</p>
       </li>
   
-      <li class="d-flex ms-md-2 p-3" (click)="changeBackgroundColor('fav')" [ngClass]="{'selected': selectedItem === 'fav'}">
+      <li routerLink="/home/favoritos" class="d-flex ms-md-2 p-3" (click)="changeBackgroundColor('fav')" [ngClass]="{'selected': selectedItem === 'fav'}">
         <img src="../../../assets/images/home/side-bar/star.svg" alt="icone livro" class="me-md-2">
         <p>Favoritos</p>
       </li>

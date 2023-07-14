@@ -5,6 +5,7 @@ import { TelaCadastrarAcervosComponent } from '../conteudo-pagina/tela-cadastrar
 import { AtualizarRemoverAcervosComponent } from '../conteudo-pagina/atualizar-remover-acervos/atualizar-remover-acervos.component';
 import { TelaHomeComponent } from '../tela-home/tela-home.component';
 import { InfoLivrosComponent } from '../info-livros/info-livros.component';
+import { TelaFavComponent } from './tela-fav/tela-fav.component';
 ;
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
     ]},
     {path: 'cadastrar', component: TelaCadastrarAcervosComponent},
     {path: 'atualizar-remover', component: AtualizarRemoverAcervosComponent},
+    {path: 'favoritos', component: TelaFavComponent}
 
   ]}
 ];

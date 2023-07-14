@@ -52,4 +52,19 @@ export class InfoLivrosComponent implements OnInit {
     }
   }
 
+  favoriteBook(bookId:any){
+    // const valor = {
+    
+    //   bookId:bookId
+    // }
+    this.conteudoPaginaService.favoriteBook(bookId).subscribe({
+      next: (res) => {
+        console.log(res);
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
+  }
+
 }

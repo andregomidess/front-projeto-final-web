@@ -28,17 +28,10 @@ export class FormCadastroComponent {
 
   constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) {
     this.form = this.fb.group({
-<<<<<<< HEAD
       name: ['', Validators.required, Validators.minLength(3)],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required, Validators.minLength(6)],
-      confirmPassword: ['', Validators.required, Validators.minLength(6)],
-=======
-      name: [null, Validators.required],
-      email: [null, [Validators.required, Validators.email]],
-      password: [null, Validators.required],
-      confirmPassword: [null, [Validators.required, this.equalsTo('password')]],
->>>>>>> 6c95a2a0f1ceeb965cc9a61cccd8f3e60bf194a1
+      confirmPassword: ['', Validators.required, Validators.minLength(6), this.equalsTo('password')],
     });
   }
 
@@ -85,12 +78,7 @@ export class FormCadastroComponent {
       if (this.form.valid){
         const res = await this.authService.createAccount(formData);
         console.log(res);
-<<<<<<< HEAD
-=======
         this.router.navigate(['/login']);
-
-
->>>>>>> 6c95a2a0f1ceeb965cc9a61cccd8f3e60bf194a1
       }else{
         console.log('Formulario inválido');
       }

@@ -39,5 +39,12 @@ export class ConteudoPaginaService {
     return this.http.patch<Book>(`${environment.api}/books/${id}`, book).pipe(take(1));
   }
 
+  favoriteBook(bookid: any){
+    return this.http.post<any>(`${environment.api}/users/favoriteBook`, bookid).pipe(take(1));
+  }
+
+  getFavoriteBooksUser(){
+    return this.http.get<Book>(`${environment.api}/users/getFavoriteBooks`).pipe(take(1));
+  }
 
 }
