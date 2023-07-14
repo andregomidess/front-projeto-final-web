@@ -114,9 +114,8 @@ module.exports = class BookController {
       return;
     }
 
-    const book = Book.findOne({
-      _id: id
-    });
+    const book = await Book.findById(id);
+
     if (!book) {
       res.status(404).json({
         message: 'Livro não encontrado'
@@ -194,6 +193,9 @@ module.exports = class BookController {
       });
       return;
     }
+    if (req.body.amount === "null") {
+      req.body.amount = 0; // Ou atribua um valor padrão
+    }
 
     if (title) {
       updatedData.title = title;
@@ -244,16 +246,20 @@ module.exports = class BookController {
     }
 
     if (categories) {
-      updatedData.buyLink = categories;
+      updatedData.categories = categories;
     }
 
     if (req.file) {
       updatedData.thumbnail = req.file.filename;
     }
 
+    // if (req.body.amount === "null") {
+    //   updatedData.amount = 0;
+    // }
+
 
     await Book.findByIdAndUpdate(id, updatedData);
-    res.status(200).json({ message: 'livro atualizado com sucesso' });
+    res.status(200).json({ message: 'livro atualizado com sucesso'});
 
   }
 }

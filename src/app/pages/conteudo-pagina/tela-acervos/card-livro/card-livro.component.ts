@@ -14,7 +14,17 @@ export class CardLivroComponent implements OnInit{
 
 
   ngOnInit(): void {
-    this.urlImage = `${environment.api}/images/books/${this.bookData.thumbnail}`;
+    this.compareUrlImage();
+  }
+
+  compareUrlImage(){
+    if (this.bookData.thumbnail?.startsWith('http')){
+      this.urlImage = this.bookData.thumbnail;
+    } else if (this.bookData.thumbnail) {
+      this.urlImage = `${environment.api}/images/book/${this.bookData.thumbnail}`;
+    } else{
+      this.urlImage = '../../../../../assets/images/home/card-livro/capa-padrao.jpg'
+    }
   }
 
 }

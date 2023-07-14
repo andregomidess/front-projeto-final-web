@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: '', loadChildren: () => import('./pages/tela-login/tela-login.module').then(m => m.TelaLoginModule)},
   {path: 'cadastrar', component: TelaCadastroComponent},
   {path: '', loadChildren: () => import('./pages/tela-home/tela-home.module').then(m => m.TelaHomeModule), canActivate: [AuthGuard]},
-  {path: 'info', component: InfoLivrosComponent}
+  {path: 'info/:id', component: InfoLivrosComponent}
 ];
 
 @NgModule({

@@ -40,7 +40,7 @@ const Book = mongoose.model(
             type: String,
         },
         amount: {
-            type: Number,
+            type: String,
         },
         buyLink: {
             type: String,

@@ -9,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabelaAcervosComponent implements OnInit {
 
+vernome(arg0: any) {
+  console.log(arg0);
+}
+
   verificaCor: boolean = true;
   allBooks!: Book[];
 
@@ -21,7 +25,21 @@ export class TabelaAcervosComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllBooks();
+
+    this.conteudoPaginaService.livroExcluido.subscribe((bookId: string) => {
+      this.allBooks = this.allBooks.filter(book => book._id !== bookId);
+    });
+
+
+    this.conteudoPaginaService.livroatualizado.subscribe((updatedFields: { _id: string, fields: any }) => {
+      const updatedBook = this.allBooks.find(book => book._id === updatedFields._id);
+      if (updatedBook) {
+        // Atualizar apenas os campos relevantes
+        Object.assign(updatedBook, updatedFields.fields);
+      }
+    });
   }
+
 
   // Função para alterar o estilo da div
   alterarEstilo() {
