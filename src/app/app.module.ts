@@ -16,6 +16,7 @@ import { TelaCadastroModule } from './pages/tela-cadastro/tela-cadastro.module';
 import { AuthService } from './shared/auth.service';
 import { httpInterceptorProviders } from './interceptor';
 import { HttpClientModule } from '@angular/common/http';
+import { ConteudoPaginaService } from './pages/conteudo-pagina/service/conteudo-pagina.service';
 
 
 
@@ -40,7 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
     ComponentsModule
     
   ],
-  providers: [AuthService, httpInterceptorProviders],
+  providers: [AuthService, httpInterceptorProviders, ConteudoPaginaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,15 +1,15 @@
 <aside>
     <!-- <app-perfil></app-perfil> -->
     <ul class="list-unstyled pt-4">
-      <li class="d-flex ms-md-2 p-3" (click)="changeBackgroundColor('acervos')" [ngClass]="{'selected': selectedItem === 'acervos'}">
+      <li class="d-flex ms-md-2 p-3" routerLink="/home/acervos" (click)="changeBackgroundColor('acervos')" [ngClass]="{'selected': selectedItem === 'acervos'}">
         <img src="../../../assets/images/home/side-bar/livro-i.svg" alt="icone livro" class="me-md-2">
         <p>Acervos</p>
       </li>
-      <li class="d-flex ms-md-2 p-3" (click)="changeBackgroundColor('cadastrar')" [ngClass]="{'selected': selectedItem === 'cadastrar'}">
+      <li class="d-flex ms-md-2 p-3" routerLink="/home/cadastrar" (click)="changeBackgroundColor('cadastrar')" [ngClass]="{'selected': selectedItem === 'cadastrar'}">
         <img src="../../../assets/images/home/side-bar/new-book-i.svg" alt="icone livro" class="me-md-2">
         <p>Cadastrar Acervos</p>
       </li>
-      <li class="d-flex ms-md-2 p-3" (click)="changeBackgroundColor('atualizar')" [ngClass]="{'selected': selectedItem === 'atualizar'}">
+      <li class="d-flex ms-md-2 p-3" routerLink="/home/atualizar-remover" (click)="changeBackgroundColor('atualizar')" [ngClass]="{'selected': selectedItem === 'atualizar'}">
         <img src="../../../assets/images/home/side-bar/update-book-i.svg" alt="icone livro" class="me-md-2">
         <p>Atualizar/remover Acervos</p>
       </li>

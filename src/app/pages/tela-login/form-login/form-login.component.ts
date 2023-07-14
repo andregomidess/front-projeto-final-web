@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/shared/auth.service';
   styleUrls: ['./form-login.component.scss']
 })
 export class FormLoginComponent implements OnDestroy {
-  
+
   form!: FormGroup;
   loginError = false;
 
@@ -37,7 +37,7 @@ export class FormLoginComponent implements OnDestroy {
         this.login.password = formValue.password;
       });
     }
-    
+
     ngOnDestroy(): void {
       if (this.formValueChangesSubscription) {
         this.formValueChangesSubscription.unsubscribe();

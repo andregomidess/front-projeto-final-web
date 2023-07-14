@@ -1,0 +1,20 @@
+<!-- Button trigger modal -->
+<img src="../../../assets/images/home/tabela/excluir.svg" data-bs-toggle="modal" [attr.data-bs-target]="'#'+modalId">
+  
+  <!-- Modal -->
+  <div class="modal fade" [id]="modalId" tabindex="-1" aria-labelledby="excluirModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Você deseja realmente excluir o livro {{titleBook}}?
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteBook()">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>

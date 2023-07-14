@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TelaHomeComponent } from './tela-home.component';
-;
 
 const routes: Routes = [
-  {path: 'home', component: TelaHomeComponent}
-];
+  {path: 'home', loadChildren: () => import('../conteudo-pagina/conteudo-pagina.module').then(m => m.ConteudoPaginaModule)}
+]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/User.model';
 
 @Component({
   selector: 'app-side-bar',
@@ -8,8 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SideBarComponent {
 
-  constructor(private router: Router) {}
+  @Input() userData!: User;
 
-  
 
 }

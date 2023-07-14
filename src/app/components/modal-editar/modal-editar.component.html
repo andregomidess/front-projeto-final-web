@@ -1,0 +1,98 @@
+<!-- Button trigger modal -->
+<img src="../../../assets/images/home/tabela/editar.svg" data-bs-toggle="modal" [attr.data-bs-target]="'#'+modalId">
+  
+  <!-- Modal -->
+  <div class="modal fade" [id]="modalId" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form  class="h-100 w-100" [formGroup]="form">
+                <div class="row mt-3">
+                  <div class="col-md-4">
+                    <label for="">Título</label>
+                    <input formControlName="title" type="text" class="form-control">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="">Sub-título</label>
+                    <input formControlName="subtitle" type="text" class="form-control">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="">Editora</label>
+                    <input formControlName="publisher" type="text" class="form-control">
+                  </div>
+                </div>
+            
+                <div class="row mt-4">
+                  <div class="col-md-4">
+                    <label for="">Data de publicação</label>
+                    <input formControlName="publishedDate" type="date" class="form-control">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="">Preço médio no mercado</label>
+                    <input formControlName="amount" type="number" class="form-control">
+                  </div>
+                  <div class="col-md-4">
+                    <div class="mb-3">
+                      <label for="formFile" class="form-label">Capa do Livro</label>
+                      <input (change)="onFotoChange($event)" class="form-control" type="file" id="formFile" accept="image/*">
+                    </div>
+                    <!-- <div class="d-flex align-items-end">
+                      <button class=" btn-anexar d-flex align-items-center text-center">
+                        <svg width="14" height="15" viewBox="0 0 14 15" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1.75 14.5C1.26875 14.5 0.856917 14.3288 0.5145 13.9864C0.1715 13.6434 0 13.2312 0 12.75V10.125H1.75V12.75H12.25V10.125H14V12.75C14 13.2312 13.8288 13.6434 13.4864 13.9864C13.1434 14.3288 12.7312 14.5 12.25 14.5H1.75ZM6.125 11V3.86875L3.85 6.14375L2.625 4.875L7 0.5L11.375 4.875L10.15 6.14375L7.875 3.86875V11H6.125Z" />
+                        </svg>
+                        <p class="ms-md-2">Anexar</p>
+                        <div class="ms-md-2">
+                          <p>Capa-do-livro.png, jpeg</p>
+                        </div>
+                      </button>
+                    </div> -->
+                  </div>
+            
+                </div>
+            
+                <div class="row mt-4">
+                  <div class="col-md-4">
+                    <label  for="">Idioma</label>
+                    <input formControlName="language" type="text" class="form-control">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="numeroPag">Número de páginas</label>
+                    <input formControlName="pageCount" type="number" class="form-control">
+                  </div>
+                   <div class="col-md-4">
+                    <label for="">ISBN</label>
+                    <input formControlName="ISBN" type="text" class="form-control">
+                  </div>
+                </div>
+            
+                <div class="row mt-4">
+                  <div class="col-md-4">
+                    <label for="">Categoria</label>
+                    <input formControlName="categories" type="text" class="form-control" >
+                  </div>
+                  <div class="col-md-8">
+                    <label for="">Autores(as)</label>
+                    <input formControlName="authors" type="text" class="form-control" >
+                  </div>
+                </div>
+                <div class="row mt-4">
+                  <div class="col-md-8">
+                    <label for="descricao" class="form-label">Descrição</label>
+                    <textarea formControlName="description" class="form-control" id="descricao" rows="6" ></textarea>
+                  </div>
+                </div>
+                <!-- <pre>{{form.value | json}}</pre> -->
+              </form>
+            
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="onSubmit()">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>

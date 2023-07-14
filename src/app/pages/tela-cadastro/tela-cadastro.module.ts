@@ -15,7 +15,8 @@ import { ComponentsModule } from 'src/app/components/components.module';
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    ComponentsModule
+    ComponentsModule,
+    
   ], exports: [CardCadastroComponent, FormCadastroComponent]
 })
 export class TelaCadastroModule { 

@@ -1,15 +1,15 @@
 <section class="tela">
   <div class="container">
-    <a class="bottom" href="/home"><i class="fas fa-arrow-left"></i> VOLTAR</a>
+    <a class="bottom" routerLink="/home/acervos"><i class="fas fa-arrow-left"></i> VOLTAR</a>
     <div class="cover">
       <div class="overlay">
-        <img src="https://staticbv.am4.com.br/publicacoes/53799/thumbs/thumbnail_397_x_595.jpg" alt="Capa do Livro">
+        <img [src]="urlImage" alt="Capa do Livro">
       </div>
       <div class="details">
-        <h1 class="book_title">Título do Livro</h1>
-        <p class="book_info">Autor do Livro</p>
-        <p class="book_info">Editora</p>
-        <p class="book_info">Ano de Publicação</p>
+        <h1 class="book_title">Título do Livro: {{book.title}}</h1>
+        <p class="book_info">Autor do Livro: {{book.authors}}</p>
+        <p class="book_info">Editora: {{book.publisher}}</p>
+        <p class="book_info">Ano de Publicação: {{book.publishedDate}}</p>
         <div class="book_stars">
           <p class="book_info">Avaliação:</p>
           <i class="fas fa-star"></i>
@@ -23,6 +23,6 @@
   </div>
   <div class="description">
     <h3>Sinopse</h3>
-    <p class="book_info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper eu elit eu rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed ac condimentum justo. Sed commodo lorem vel lectus vehicula rhoncus. Sed tristique, neque a hendrerit luctus, velit purus tincidunt metus, non interdum ex nibh at ante. Curabitur in tortor vel justo finibus consectetur. Aenean tempus lorem at urna pulvinar, at gravida ligula tempor. Praesent efficitur turpis at lorem euismod, id fringilla ex ultricies. Proin a lobortis urna. Etiam vel risus vitae odio vehicula elementum. Sed non sem auctor, rhoncus erat eu, ullamcorper nisl.</p>
+    <p class="book_info">{{book.description}}</p>
   </div>
 </section>

@@ -15,7 +15,8 @@
     </div>
     <div class="w-90">
       <app-input-float [tipoInput]="'password'" [textoPlaceHolder]="'Confirmar Senha'" [form]="form" [controlName]="'confirmPassword'"></app-input-float>
+      <p id="errorPassword" [ngStyle]="this.form.get('confirmPassword')?.hasError('equalsTo') ? {} : { 'display': 'none' } ">As senhas devem ser iguais!!</p>
     </div>
-    <button class="button-login" >Cadastrar</button>
+    <button [disabled]="!this.form.valid" class="button-login" >Cadastrar</button>
 </form>
   

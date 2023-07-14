@@ -1,11 +1,11 @@
 <section class="home">
-  <app-header></app-header>
+  <app-header [userData]="user"></app-header>
   <main class="row m-0">
     <div class="col-md-2 p-0 side">
-      <app-side-bar></app-side-bar>
+      <app-side-bar [userData]="user"></app-side-bar>
     </div>
-    <div class="col-md-10 p-0 content teste">
-      <app-conteudo-pagina></app-conteudo-pagina>
+    <div class="col-md-10 content teste">
+      <router-outlet></router-outlet>
     </div>
   </main>
 

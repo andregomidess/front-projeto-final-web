@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
@@ -26,13 +26,46 @@ export class FormCadastroComponent {
     }
   }
 
-  constructor(private authService: AuthService, private fb: FormBuilder) {
+  constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) {
     this.form = this.fb.group({
+<<<<<<< HEAD
       name: ['', Validators.required, Validators.minLength(3)],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required, Validators.minLength(6)],
       confirmPassword: ['', Validators.required, Validators.minLength(6)],
+=======
+      name: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]],
+      password: [null, Validators.required],
+      confirmPassword: [null, [Validators.required, this.equalsTo('password')]],
+>>>>>>> 6c95a2a0f1ceeb965cc9a61cccd8f3e60bf194a1
     });
+  }
+
+  equalsTo(otherField: string){
+    const validator = (formControl: FormControl)=> {
+      if (otherField == null){
+        throw new Error('É necessário informar o campo');
+      }
+
+      if (!formControl.root || !(<FormGroup>formControl.root).controls){
+        return null;
+      }
+
+      const field = (<FormGroup>formControl.root).get(otherField);
+
+      if (!field){
+        throw new Error('É necessário informar um campo válido');
+      }
+
+
+      if(field.value !== formControl.value){
+        return {equalsTo: otherField}
+      }
+      return null;
+    }
+
+    return validator;
   }
 
   constructFormData(){
@@ -41,7 +74,7 @@ export class FormCadastroComponent {
     formData.append('email', this.form.get('email')?.value);
     formData.append('password', this.form.get('password')?.value);
     formData.append('confirmPassword', this.form.get('confirmPassword')?.value);
-    formData.append('permission', this.form.get('permission')?.value);
+    //formData.append('permission', this.form.get('permission')?.value);
     formData.append('image', this.fotoServer);
     return formData;
   }
@@ -52,6 +85,12 @@ export class FormCadastroComponent {
       if (this.form.valid){
         const res = await this.authService.createAccount(formData);
         console.log(res);
+<<<<<<< HEAD
+=======
+        this.router.navigate(['/login']);
+
+
+>>>>>>> 6c95a2a0f1ceeb965cc9a61cccd8f3e60bf194a1
       }else{
         console.log('Formulario inválido');
       }
