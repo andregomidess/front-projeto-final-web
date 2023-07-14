@@ -1,12 +1,18 @@
 <div class="acervos">
   <div class="campo-busca">
-    <app-campo-bsuca class="d-flex justify-content-end me-md-3"></app-campo-bsuca>
+    <app-campo-bsuca></app-campo-bsuca>
   </div>
-  <ng-container>
-    <div class="d-flex flex-wrap justify-content-center">
-      <ng-container *ngFor="let book of this.allBooks">
-        <app-card-livro [bookData]="book"></app-card-livro>
-      </ng-container>
-    </div>
-  </ng-container>
+  <div *ngIf="resultados === true && filteredBooks.length === 0" class="d-flex flex-wrap justify-content-center">
+    <ng-container *ngFor="let book of allBooks">
+      <app-card-livro [bookData]="book"></app-card-livro>
+    </ng-container>
+  </div>
+  <div class="d-flex flex-wrap justify-content-center">
+    <ng-container *ngIf="filteredBooks.length === 0">
+      <p>Nenhum resultado encontrado.</p>
+    </ng-container>
+    <ng-container *ngFor="let book of filteredBooks">
+      <app-card-livro [bookData]="book"></app-card-livro>
+    </ng-container>
+  </div>
 </div>

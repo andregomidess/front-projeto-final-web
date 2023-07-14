@@ -12,7 +12,7 @@ import { TelaFavComponent } from './tela-fav/tela-fav.component';
 import { CounteudoPaginaRoutingModule } from './conteudo-pagina-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ComponentsModule } from 'src/app/components/components.module';
-
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -20,7 +20,7 @@ import { ComponentsModule } from 'src/app/components/components.module';
 @NgModule({
   declarations: [CardLivroComponent, TelaAcervosComponent, CampoBsucaComponent, TelaCadastrarAcervosComponent, AtualizarRemoverAcervosComponent, CampoBuscaComponent, TabelaAcervosComponent,  TelaFavComponent],
   imports: [
-    CommonModule, CounteudoPaginaRoutingModule, ReactiveFormsModule, ComponentsModule
+    CommonModule, CounteudoPaginaRoutingModule, ReactiveFormsModule, ComponentsModule, FormsModule
   ], exports: [
     CardLivroComponent, TelaAcervosComponent, TelaCadastrarAcervosComponent, AtualizarRemoverAcervosComponent, TelaFavComponent
   ]
