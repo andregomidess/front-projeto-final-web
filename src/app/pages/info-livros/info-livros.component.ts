@@ -13,6 +13,7 @@ export class InfoLivrosComponent implements OnInit {
 
   book!: Book;
   urlImage!: string;
+  bookId!: string | null;
 
   constructor(private route: ActivatedRoute, private conteudoPaginaService: ConteudoPaginaService) {}
 
@@ -20,6 +21,7 @@ export class InfoLivrosComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       const bookId = params.get('id');
       console.log(typeof bookId);
+      this.bookId = bookId;
       if(bookId){
         this.getBookById(bookId);
       }
@@ -53,13 +55,15 @@ export class InfoLivrosComponent implements OnInit {
   }
 
   favoriteBook(bookId:any){
-    // const valor = {
+    const valor = {
     
-    //   bookId:bookId
-    // }
-    this.conteudoPaginaService.favoriteBook(bookId).subscribe({
+      bookId:this.bookId,
+    }
+    console.log(this.bookId);
+    this.conteudoPaginaService.favoriteBook(valor).subscribe({
       next: (res) => {
         console.log(res);
+        //this.book = res;
       },
       error: (err) => {
         console.log(err);

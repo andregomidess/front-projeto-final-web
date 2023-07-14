@@ -9,9 +9,8 @@
   </div>
     
     <ng-container>
-      <div class="d-flex flex-wrap justify-content-center">
-        <app-card-livro></app-card-livro>
-        <app-card-livro></app-card-livro>
+      <div class="d-flex flex-wrap justify-content-center" *ngFor="let book of this.favBooks">
+        <app-card-livro [bookData]="book"></app-card-livro>
       </div>
     </ng-container>
   </div>

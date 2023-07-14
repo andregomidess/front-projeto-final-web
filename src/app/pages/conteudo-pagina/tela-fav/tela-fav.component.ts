@@ -9,7 +9,7 @@ import { Book } from 'src/app/models/Book.model';
 })
 export class TelaFavComponent implements OnInit {
 
-  favBooks!: Book[];
+  favBooks: any;
 
   constructor(private conteudoPaginaService: ConteudoPaginaService) {}
 
@@ -20,7 +20,8 @@ export class TelaFavComponent implements OnInit {
   getFavBooksUser(){
     this.conteudoPaginaService.getFavoriteBooksUser().subscribe({
       next: (res) => {
-        console.log(res);
+        this.favBooks = res;
+        console.log(this.favBooks);
       },
       error: (err) => {
         console.log(err);
